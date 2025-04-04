@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: './',
+  base: '/',  // 改为绝对路径
   plugins: [react()],
   build: {
     outDir: 'dist',
