@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react'; // ✅ 正确插件名和语法
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/',  // ✅ 确保资源从根目录加载
   plugins: [react()],
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
+  build: {
+    outDir: 'dist',  // ✅ 明确输出目录
+    assetsDir: 'assets'  // ✅ 资源子目录
+  }
 });
