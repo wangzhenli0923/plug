@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/',  // 改为绝对路径
+  base: '/',
   plugins: [react()],
   build: {
     outDir: 'dist',
@@ -18,12 +18,7 @@ export default defineConfig({
         entryFileNames: 'assets/[name].[hash].js',
       }
     },
-    minify: 'terser',
+    minify: 'esbuild',  // 改用 esbuild 而不是 terser
     sourcemap: false
-  },
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src')
-    }
   }
 });
